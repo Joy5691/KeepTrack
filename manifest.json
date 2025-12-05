@@ -1,0 +1,35 @@
+{
+  "name": "KeepTrack - Smart Expense Tracker",
+  "short_name": "KeepTrack",
+  "description": "Track your expenses and manage your finances smartly",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1f2937",
+  "theme_color": "#10b981",
+  "orientation": "portrait",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "keeptrack.png",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "keeptrack.png",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "shortcuts": [
+    {
+      "name": "Add Transaction",
+      "short_name": "Add",
+      "description": "Quick add a new transaction",
+      "url": "/?tab=add",
+      "icons": [{ "src": "keeptrack.png", "sizes": "192x192" }]
+    }
+  ]
+}
