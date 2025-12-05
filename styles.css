@@ -459,13 +459,7 @@ body {
 }
 
 .card-chip {
-    position: absolute;
-    width: 50px;
-    height: 35px;
-    border-radius: 8px;
-    background: rgba(249, 250, 251, 0.2);
-    bottom: 24px;
-    left: 24px;
+    display: none; /* Hide the chip completely */
 }
 
 .card-wave {
@@ -1168,4 +1162,5 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
+
 
