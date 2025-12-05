@@ -2,21 +2,21 @@
   "name": "KeepTrack - Smart Expense Tracker",
   "short_name": "KeepTrack",
   "description": "Track your expenses and manage your finances smartly",
-  "start_url": "/",
+  "start_url": "/KeepTrack/",
   "display": "standalone",
   "background_color": "#e6e6e6",
   "theme_color": "#10b981",
   "orientation": "portrait",
-  "scope": "/",
+  "scope": "/KeepTrack/",
   "icons": [
     {
-      "src": "keeptrack.png",
+      "src": "/KeepTrack/keeptrack1.png",
       "sizes": "192x192",
       "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "keeptrack.png",
+      "src": "/KeepTrack/keeptrack1.png",
       "sizes": "512x512",
       "type": "image/jpeg",
       "purpose": "any maskable"
@@ -28,8 +28,8 @@
       "name": "Add Transaction",
       "short_name": "Add",
       "description": "Quick add a new transaction",
-      "url": "/?tab=add",
-      "icons": [{ "src": "keeptrack.png", "sizes": "192x192" }]
+      "url": "/KeepTrack/?tab=add",
+      "icons": [{ "src": "/KeepTrack/keeptrack1.png", "sizes": "192x192" }]
     }
   ]
 }

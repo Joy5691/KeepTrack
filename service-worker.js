@@ -1,11 +1,11 @@
 const CACHE_NAME = 'keeptrack-v1.0.0';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/styles.css',
-  '/app.js',
-  '/keeptrack.png',
-  '/manifest.json'
+  '/KeepTrack/',
+  '/KeepTrack/index.html',
+  '/KeepTrack/styles.css',
+  '/KeepTrack/app.js',
+  '/KeepTrack/keeptrack1.png',
+  '/KeepTrack/manifest.json'
 ];
 
 // Install event - cache files
@@ -71,7 +71,7 @@ self.addEventListener('fetch', (event) => {
       })
       .catch(() => {
         // Fallback for offline
-        return caches.match('/index.html');
+        return caches.match('/KeepTrack/index.html');
       })
   );
 });
