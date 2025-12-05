@@ -1,6 +1,7 @@
 /* KeepTrack - Clean Beige & Black/White Theme */
 
 /* ========== CSS Variables ========== */
+
 :root {
     --primary-bg: #ede8e1;
     --secondary-bg: #ffffff;
@@ -8,18 +9,15 @@
     --text-primary: #1a1a1a;
     --text-secondary: #6c757d;
     --text-light: #adb5bd;
-    
     /* Colors */
     --accent-black: #1a1a1a;
     --success-color: #10b981;
     --danger-color: #ef4444;
-    
     /* Shadows */
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.12);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
-    
     /* Border radius */
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -29,6 +27,7 @@
 }
 
 /* ========== Reset & Base ========== */
+
 * {
     margin: 0;
     padding: 0;
@@ -46,6 +45,7 @@ body {
 }
 
 /* ========== Loading Screen - Beige with Black Spinner ========== */
+
 .loading-screen {
     position: fixed;
     top: 0;
@@ -81,6 +81,7 @@ body {
 }
 
 /* ========== Auth Screens ========== */
+
 .screen {
     min-height: 100vh;
     display: flex;
@@ -118,6 +119,14 @@ body {
 .logo {
     text-align: center;
     margin-bottom: 30px;
+}
+
+.logo-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
 }
 
 .logo h1 {
@@ -188,6 +197,7 @@ body {
 }
 
 /* ========== Buttons ========== */
+
 .btn {
     padding: 14px 24px;
     border: none;
@@ -230,7 +240,13 @@ body {
     width: 100%;
 }
 
+.btn-sm {
+    padding: 8px 16px;
+    font-size: 13px;
+}
+
 /* ========== Main App ========== */
+
 #mainApp {
     display: flex;
     flex-direction: column;
@@ -240,6 +256,7 @@ body {
 }
 
 /* ========== Header & Tab Container - Rounded White Plate ========== */
+
 .app-header {
     background: #ffffff;
     padding: 24px 32px;
@@ -255,7 +272,7 @@ body {
 
 .header-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     position: relative;
 }
@@ -266,6 +283,13 @@ body {
     gap: 12px;
 }
 
+.header-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .app-title {
     font-size: 28px;
     font-weight: 700;
@@ -273,17 +297,27 @@ body {
     letter-spacing: -0.5px;
 }
 
+.user-info {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .user-greeting {
-    display: none;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.user-greeting strong {
+    color: var(--text-primary);
 }
 
 #logoutBtn {
-    position: absolute;
-    right: 0;
     padding: 12px 24px;
 }
 
 /* ========== Tab Navigation - Connected to Header ========== */
+
 .tab-nav {
     background: #fff;
     padding: 16px 32px;
@@ -339,7 +373,142 @@ body {
     filter: grayscale(100%) brightness(10);
 }
 
+/* ========== Credit Card Balance ========== */
+
+.credit-card-balance {
+    position: relative;
+    background: linear-gradient(135deg, #111827, #1f2933);
+    color: #fff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+}
+
+.card-header {
+    margin-bottom: 8px;
+}
+
+.card-user-name {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    display: block;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.card-footer {
+    display: none;
+}
+
+.card-balance {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.balance-label {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.balance-amount {
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.card-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.info-value {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.info-value.income {
+    color: var(--success-color);
+}
+
+.info-value.expense {
+    color: var(--danger-color);
+}
+
+.card-chip {
+    position: absolute;
+    width: 50px;
+    height: 35px;
+    border-radius: 8px;
+    background: rgba(249, 250, 251, 0.2);
+    bottom: 24px;
+    left: 24px;
+}
+
+.card-wave {
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 0 0, rgba(249, 250, 251, 0.15), transparent 60%);
+    right: -60px;
+    bottom: -80px;
+}
+
+/* Mobile tweaks */
+@media (max-width: 768px) {
+    .credit-card-balance {
+        padding: 24px 20px;
+    }
+
+    .card-user-name {
+        font-size: 28px;
+    }
+
+    .balance-amount {
+        font-size: 36px;
+    }
+
+    .info-value {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-user-name {
+        font-size: 24px;
+    }
+
+    .balance-amount {
+        font-size: 32px;
+    }
+}
+
 /* ========== Tab Container ========== */
+
 .tab-container {
     flex: 1;
     max-width: 1200px;
@@ -369,6 +538,7 @@ body {
 }
 
 /* ========== Cards Grid ========== */
+
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -444,6 +614,7 @@ body {
 }
 
 /* ========== Section Card ========== */
+
 .section-card {
     background: var(--card-bg);
     padding: 24px;
@@ -472,6 +643,7 @@ body {
 }
 
 /* ========== Activity Grid ========== */
+
 .activity-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -505,6 +677,7 @@ body {
 }
 
 /* ========== Transactions List ========== */
+
 .transactions-list {
     display: flex;
     flex-direction: column;
@@ -520,6 +693,7 @@ body {
     align-items: center;
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
+    gap: 12px;
 }
 
 .transaction-item:hover {
@@ -566,7 +740,13 @@ body {
     background: rgba(239, 68, 68, 0.1);
 }
 
+.transaction-actions {
+    display: flex;
+    gap: 8px;
+}
+
 /* ========== Transaction Form ========== */
+
 .transaction-form {
     display: flex;
     flex-direction: column;
@@ -627,7 +807,27 @@ body {
     grid-column: 1 / -1;
 }
 
+/* ========== Filter Section ========== */
+
+.filter-section {
+    margin-bottom: 20px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.filter-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 /* ========== Breakdown List ========== */
+
 .breakdown-list {
     display: flex;
     flex-direction: column;
@@ -661,13 +861,89 @@ body {
 }
 
 /* ========== Stats Grid ========== */
+
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
 }
 
+/* ========== Budget List ========== */
+
+.budget-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.budget-item {
+    padding: 18px;
+    background: #f9fafb;
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+}
+
+.budget-item:hover {
+    background: #f3f4f6;
+}
+
+.budget-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.budget-category {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.budget-amount {
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.budget-progress {
+    width: 100%;
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.budget-progress-bar {
+    height: 100%;
+    background: var(--success-color);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.budget-progress-bar.warning {
+    background: #f59e0b;
+}
+
+.budget-progress-bar.danger {
+    background: var(--danger-color);
+}
+
+.budget-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.budget-actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+}
+
 /* ========== Toast ========== */
+
 .toast {
     position: fixed;
     bottom: -100px;
@@ -701,6 +977,7 @@ body {
 }
 
 /* ========== Empty State ========== */
+
 .empty-state {
     text-align: center;
     padding: 40px 20px;
@@ -709,57 +986,83 @@ body {
 }
 
 /* ========== Responsive ========== */
+
 @media (max-width: 768px) {
     #mainApp {
         padding: 12px 12px 0 12px;
     }
-    
+
     .app-header {
         padding: 20px 24px;
     }
-    
+
     .tab-nav {
         padding: 14px 24px;
         justify-content: flex-start;
         gap: 12px;
     }
-    
+
     .header-content {
         flex-direction: column;
         gap: 12px;
     }
-    
+
+    .user-info {
+        position: static;
+        transform: none;
+    }
+
     #logoutBtn {
         position: static;
     }
-    
+
     .cards-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .form-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .activity-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .login-container {
         padding: 30px 24px;
     }
-    
+
     .app-title {
         font-size: 22px;
     }
-    
+
     .tab {
         padding: 12px 20px;
         font-size: 14px;
+    }
+
+    .credit-card-balance {
+        padding: 20px 16px;
+    }
+
+    .balance-amount {
+        font-size: 28px;
+    }
+
+    .filter-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+    }
+
+    .filter-actions .btn {
+        width: 100%;
     }
 }
 
@@ -767,17 +1070,32 @@ body {
     .stat-value {
         font-size: 24px;
     }
-    
+
     .transaction-amount {
         font-size: 16px;
     }
-    
+
     .app-title {
         font-size: 20px;
+    }
+
+    .balance-amount {
+        font-size: 24px;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .transaction-actions {
+        width: 100%;
+        justify-content: flex-end;
     }
 }
 
 /* ========== Scrollbar ========== */
+
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -795,3 +1113,59 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1;
 }
+/* Success Popup */
+.success-popup {
+    position: fixed;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    padding: 20px 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(16, 185, 129, 0.3);
+    z-index: 2000;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    min-width: 300px;
+}
+
+.success-popup.show {
+    top: 30px;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.popup-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    animation: scaleIn 0.4s ease-out;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.popup-message {
+    font-size: 16px;
+    font-weight: 600;
+}
+

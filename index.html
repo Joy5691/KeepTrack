@@ -3,45 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KeepTrack - Expense Tracker</title>
+    <title>KeepTrack - Smart Expense Tracker</title>
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Firebase SDK v9 Compat -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-
     <!-- Loading Screen -->
     <div id="loadingScreen" class="loading-screen">
         <div class="spinner"></div>
-        <p>Connecting to Firebase...</p>
+        <p>Loading KeepTrack...</p>
     </div>
 
     <!-- Login Screen -->
     <div id="loginScreen" class="screen" style="display: none;">
         <div class="login-container">
             <div class="logo">
-                <h1>💰 KeepTrack</h1>
-                <p>Track your expenses, save better</p>
+                <img src="keeptrack.png" alt="KeepTrack Logo" class="logo-image">
+                <h1>KeepTrack</h1>
+                <p>Track your finances smartly</p>
             </div>
-            
             <form id="loginForm" class="auth-form">
                 <div class="input-group">
-                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
                 </div>
-                
                 <div class="input-group">
-                    <input type="password" id="loginPassword" placeholder="Password" required>
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
-            
-            <p class="auth-switch">
-                Don't have an account? <span id="showRegister">Sign up</span>
-            </p>
+            <div class="auth-switch">
+                Don't have an account? <span id="showRegister">Register</span>
+            </div>
         </div>
     </div>
 
@@ -49,40 +42,53 @@
     <div id="registerScreen" class="screen" style="display: none;">
         <div class="login-container">
             <div class="logo">
-                <h1>💰 KeepTrack</h1>
+                <img src="keeptrack.png" alt="KeepTrack Logo" class="logo-image">
+                <h1>KeepTrack</h1>
                 <p>Create your account</p>
             </div>
-            
             <form id="registerForm" class="auth-form">
                 <div class="input-group">
-                    <input type="text" id="registerName" placeholder="Full Name" required>
+                    <label for="registerName">Full Name</label>
+                    <input type="text" id="registerName" placeholder="Enter your name" required>
                 </div>
-                
                 <div class="input-group">
-                    <input type="email" id="registerEmail" placeholder="Email" required>
+                    <label for="registerEmail">Email</label>
+                    <input type="email" id="registerEmail" placeholder="Enter your email" required>
                 </div>
-                
                 <div class="input-group">
-                    <input type="password" id="registerPassword" placeholder="Password (min 6 chars)" required minlength="6">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Create a password" required>
                 </div>
-                
-                <button type="submit" class="btn btn-primary">Register</button>
+                <div class="input-group">
+                    <label for="registerCurrency">Preferred Currency</label>
+                    <select id="registerCurrency" required>
+                        <option value="৳">৳ - Bangladeshi Taka (BDT)</option>
+                        <option value="$">$ - US Dollar (USD)</option>
+                        <option value="€">€ - Euro (EUR)</option>
+                        <option value="£">£ - British Pound (GBP)</option>
+                        <option value="¥">¥ - Japanese Yen (JPY)</option>
+                        <option value="₹">₹ - Indian Rupee (INR)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
-            
-            <p class="auth-switch">
+            <div class="auth-switch">
                 Already have an account? <span id="showLogin">Login</span>
-            </p>
+            </div>
         </div>
     </div>
 
-    <!-- Main App Screen -->
-    <div id="mainApp" class="screen" style="display: none;">
+    <!-- Main App -->
+    <div id="mainApp" style="display: none;">
         <!-- Header -->
         <header class="app-header">
             <div class="header-content">
                 <div class="header-left">
-                    <h1 class="app-title">💰 KeepTrack</h1>
-                    <p class="user-greeting">Welcome, <span id="userName">User</span></p>
+                    <img src="keeptrack.png" alt="KeepTrack Logo" class="header-logo">
+                    <h1 class="app-title">KeepTrack</h1>
+                </div>
+                <div class="user-info">
+                    <span class="user-greeting">Hello, <strong id="userName">User</strong>!</span>
                 </div>
                 <button id="logoutBtn" class="btn btn-secondary">Logout</button>
             </div>
@@ -92,79 +98,86 @@
         <nav class="tab-nav">
             <button class="tab active" data-tab="dashboard">
                 <span class="tab-icon">📊</span>
-                Dashboard
+                <span>Dashboard</span>
             </button>
             <button class="tab" data-tab="add">
                 <span class="tab-icon">➕</span>
-                Add
+                <span>Add</span>
             </button>
             <button class="tab" data-tab="history">
                 <span class="tab-icon">📝</span>
-                History
+                <span>History</span>
             </button>
             <button class="tab" data-tab="stats">
                 <span class="tab-icon">📈</span>
-                Stats
+                <span>Statistics</span>
+            </button>
+            <button class="tab" data-tab="budget">
+                <span class="tab-icon">🎯</span>
+                <span>Budget</span>
             </button>
         </nav>
 
-        <!-- Tab Contents -->
-        <main class="tab-container">
+        <!-- Tab Container -->
+        <div class="tab-container">
             <!-- Dashboard Tab -->
             <div id="dashboard" class="tab-content active">
-                <div class="cards-grid">
-                    <!-- Balance Card -->
-                    <div class="stat-card balance-card">
-                        <div class="stat-icon">💰</div>
-                        <div class="stat-content">
-                            <p class="stat-label">Total Balance</p>
-                            <h2 id="totalBalance" class="stat-value">৳0.00</h2>
-                        </div>
+                <!-- Credit Card Style Balance - Only Balance, No Income/Expense -->
+                <div class="credit-card-balance">
+                    <div class="card-header">
+                        <span class="card-user-name" id="cardUserName">User</span>
                     </div>
+                    <div class="card-subtitle">KEEPTRACK CARD</div>
+                    <div class="card-balance">
+                        <div class="balance-label">Total Balance</div>
+                        <div class="balance-amount" id="cardBalance">৳0.00</div>
+                    </div>
+                    <div class="card-chip"></div>
+                    <div class="card-wave"></div>
+                </div>
 
-                    <!-- Income Card -->
+                <!-- Stats Cards - Only Income and Expense -->
+                <div class="cards-grid">
                     <div class="stat-card income-card">
                         <div class="stat-icon">📈</div>
                         <div class="stat-content">
-                            <p class="stat-label">Total Income</p>
-                            <h2 id="totalIncome" class="stat-value income">+৳0.00</h2>
+                            <div class="stat-label">Total Income</div>
+                            <div class="stat-value income" id="totalIncome">+৳0.00</div>
                         </div>
                     </div>
-
-                    <!-- Expense Card -->
                     <div class="stat-card expense-card">
                         <div class="stat-icon">📉</div>
                         <div class="stat-content">
-                            <p class="stat-label">Total Expense</p>
-                            <h2 id="totalExpense" class="stat-value expense">-৳0.00</h2>
+                            <div class="stat-label">Total Expense</div>
+                            <div class="stat-value expense" id="totalExpense">-৳0.00</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Today's Activity -->
                 <div class="section-card">
-                    <h3 class="section-title">Today's Activity</h3>
+                    <h2 class="section-title">Today's Activity</h2>
                     <div class="activity-grid">
                         <div class="activity-item">
                             <span class="activity-label">Today's Income</span>
-                            <span id="todayIncome" class="activity-value income">+৳0.00</span>
+                            <span class="activity-value income" id="todayIncome">+৳0.00</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-label">Today's Expense</span>
-                            <span id="todayExpense" class="activity-value expense">-৳0.00</span>
+                            <span class="activity-value expense" id="todayExpense">-৳0.00</span>
                         </div>
                         <div class="activity-item">
                             <span class="activity-label">Month Savings</span>
-                            <span id="monthSavings" class="activity-value">৳0.00</span>
+                            <span class="activity-value" id="monthSavings">৳0.00</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Recent Transactions -->
                 <div class="section-card">
-                    <h3 class="section-title">Recent Transactions</h3>
+                    <h2 class="section-title">Recent Transactions</h2>
                     <div id="recentList" class="transactions-list">
-                        <p class="empty-state">No transactions yet. Add your first transaction!</p>
+                        <div class="empty-state">No transactions yet. Add your first transaction!</div>
                     </div>
                 </div>
             </div>
@@ -172,56 +185,55 @@
             <!-- Add Transaction Tab -->
             <div id="add" class="tab-content">
                 <div class="section-card">
-                    <h3 class="section-title">Add Transaction</h3>
-                    
+                    <h2 class="section-title">Add Transaction</h2>
                     <form id="addForm" class="transaction-form">
-                        <!-- Type Selection -->
+                        <input type="hidden" id="transactionType" value="income">
+                        <input type="hidden" id="editTransactionId" value="">
+
                         <div class="type-selector">
                             <button type="button" id="incomeBtn" class="type-btn active">
                                 <span class="type-icon">📈</span>
-                                Income
+                                <span>Income</span>
                             </button>
                             <button type="button" id="expenseBtn" class="type-btn">
                                 <span class="type-icon">📉</span>
-                                Expense
+                                <span>Expense</span>
                             </button>
                         </div>
 
-                        <input type="hidden" id="transactionType" value="income">
-
                         <div class="form-grid">
                             <div class="input-group">
-                                <label for="amount">Amount (৳)</label>
-                                <input type="number" id="amount" placeholder="0.00" step="0.01" min="0" required>
+                                <label for="amount">Amount *</label>
+                                <input type="number" id="amount" step="0.01" placeholder="0.00" required>
                             </div>
-
                             <div class="input-group">
-                                <label for="category">Category</label>
+                                <label for="category">Category *</label>
                                 <select id="category" required>
-                                    <option value="Salary">Salary</option>
-                                    <option value="Freelance">Freelance</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Investment">Investment</option>
-                                    <option value="Bonus">Bonus</option>
-                                    <option value="Gift">Gift</option>
-                                    <option value="Other Income">Other Income</option>
+                                    <option value="">Select category</option>
                                 </select>
                             </div>
-
+                            <div class="input-group">
+                                <label for="date">Date *</label>
+                                <input type="date" id="date" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="recurring">Recurring</label>
+                                <select id="recurring">
+                                    <option value="none">None</option>
+                                    <option value="daily">Daily</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="yearly">Yearly</option>
+                                </select>
+                            </div>
                             <div class="input-group full-width">
                                 <label for="description">Description</label>
-                                <input type="text" id="description" placeholder="Optional description">
-                            </div>
-
-                            <div class="input-group">
-                                <label for="date">Date</label>
-                                <input type="date" id="date" required>
+                                <input type="text" id="description" placeholder="Add a note (optional)">
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">
-                            Add Transaction
-                        </button>
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Add Transaction</button>
+                        <button type="button" class="btn btn-secondary btn-block" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
                     </form>
                 </div>
             </div>
@@ -229,9 +241,48 @@
             <!-- History Tab -->
             <div id="history" class="tab-content">
                 <div class="section-card">
-                    <h3 class="section-title">Transaction History</h3>
-                    <div id="transactionHistory" class="transactions-list">
-                        <p class="empty-state">No transaction history</p>
+                    <h2 class="section-title">Transaction History</h2>
+
+                    <!-- Search and Filter -->
+                    <div class="filter-section">
+                        <div class="filter-grid">
+                            <div class="input-group">
+                                <label for="searchTransaction">Search</label>
+                                <input type="text" id="searchTransaction" placeholder="Search transactions...">
+                            </div>
+                            <div class="input-group">
+                                <label for="filterType">Type</label>
+                                <select id="filterType">
+                                    <option value="all">All</option>
+                                    <option value="income">Income</option>
+                                    <option value="expense">Expense</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="filterCategory">Category</label>
+                                <select id="filterCategory">
+                                    <option value="all">All Categories</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="dateFrom">From Date</label>
+                                <input type="date" id="dateFrom">
+                            </div>
+                            <div class="input-group">
+                                <label for="dateTo">To Date</label>
+                                <input type="date" id="dateTo">
+                            </div>
+                        </div>
+                        <div class="filter-actions">
+                            <button class="btn btn-primary" id="applyFilters">Apply Filters</button>
+                            <button class="btn btn-secondary" id="clearFilters">Clear</button>
+                            <button class="btn btn-secondary" id="exportCSV">Export CSV</button>
+                            <button class="btn btn-secondary" id="exportPDF">Export PDF</button>
+                        </div>
+                    </div>
+
+                    <div id="historyList" class="transactions-list">
+                        <div class="empty-state">No transaction history</div>
                     </div>
                 </div>
             </div>
@@ -239,130 +290,120 @@
             <!-- Statistics Tab -->
             <div id="stats" class="tab-content">
                 <div class="stats-grid">
-                    <!-- Income Breakdown -->
                     <div class="section-card">
-                        <h3 class="section-title">Income Breakdown</h3>
+                        <h2 class="section-title">Income Breakdown</h2>
                         <div id="incomeBreakdown" class="breakdown-list">
-                            <p class="empty-state">No income data</p>
+                            <div class="empty-state">No income data</div>
                         </div>
+                        <canvas id="incomeChart" style="margin-top: 20px; max-height: 300px;"></canvas>
                     </div>
-
-                    <!-- Expense Breakdown -->
                     <div class="section-card">
-                        <h3 class="section-title">Expense Breakdown</h3>
+                        <h2 class="section-title">Expense Breakdown</h2>
                         <div id="expenseBreakdown" class="breakdown-list">
-                            <p class="empty-state">No expense data</p>
+                            <div class="empty-state">No expense data</div>
                         </div>
+                        <canvas id="expenseChart" style="margin-top: 20px; max-height: 300px;"></canvas>
+                    </div>
+                </div>
+
+                <!-- Monthly Trend Chart -->
+                <div class="section-card">
+                    <h2 class="section-title">Monthly Trend</h2>
+                    <canvas id="trendChart" style="max-height: 400px;"></canvas>
+                </div>
+
+                <!-- Balance Ogive (Cumulative) Chart -->
+                <div class="section-card">
+                    <h2 class="section-title">Balance Trend (Cumulative)</h2>
+                    <canvas id="ogiveChart" style="max-height: 400px;"></canvas>
+                </div>
+            </div>
+
+            <!-- Budget Tab -->
+            <div id="budget" class="tab-content">
+                <div class="section-card">
+                    <h2 class="section-title">Budget Management</h2>
+                    <form id="budgetForm" class="transaction-form">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="budgetCategory">Category</label>
+                                <select id="budgetCategory" required>
+                                    <option value="">Select category</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label for="budgetAmount">Budget Limit</label>
+                                <input type="number" id="budgetAmount" step="0.01" placeholder="0.00" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="budgetPeriod">Period</label>
+                                <select id="budgetPeriod" required>
+                                    <option value="monthly">Monthly</option>
+                                    <option value="weekly">Weekly</option>
+                                    <option value="yearly">Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Set Budget</button>
+                    </form>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Active Budgets</h2>
+                    <div id="budgetList" class="budget-list">
+                        <div class="empty-state">No budgets set. Create your first budget!</div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successPopup" class="success-popup">
+        <div class="popup-content">
+            <div class="popup-icon">✓</div>
+            <div class="popup-message" id="popupMessage">Transaction added successfully!</div>
+        </div>
     </div>
 
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
 
-    <!-- Firebase Configuration -->
-    <script>
-        // Firebase Configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyCp3ZOd_noD5vEIngZs13n_CMWaF_95z98",
-            authDomain: "keeptrack-7ecc0.firebaseapp.com",
-            projectId: "keeptrack-7ecc0",
-            storageBucket: "keeptrack-7ecc0.firebasestorage.app",
-            messagingSenderId: "50588338908",
-            appId: "1:50588338908:web:55742e6d5ec1999d224219",
-            measurementId: "G-64DPZ24NFN"
-        };
+    <!-- Firebase SDK (Version 8) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 
-        // Global variables (declare here, will be used in app.js)
-        let auth = null;
-        let db = null;
-        let firebaseInitialized = false;
+    <!-- Firebase Configuration - REPLACE WITH YOUR CONFIG -->
+    <script>
+        // TODO: Replace with YOUR Firebase config from Firebase Console
+        // Get it from: Firebase Console > Project Settings > General > Your apps > Firebase SDK snippet
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCp3ZOd_noD5vEIngZs13n_CMWaF_95z98",
+  authDomain: "keeptrack-7ecc0.firebaseapp.com",
+  projectId: "keeptrack-7ecc0",
+  storageBucket: "keeptrack-7ecc0.firebasestorage.app",
+  messagingSenderId: "50588338908",
+  appId: "1:50588338908:web:55742e6d5ec1999d224219",
+  measurementId: "G-64DPZ24NFN"
+};
 
         // Initialize Firebase
-        function initializeFirebase() {
-            try {
-                console.log("Initializing Firebase...");
-                firebase.initializeApp(firebaseConfig);
-                auth = firebase.auth();
-                db = firebase.firestore();
-                firebaseInitialized = true;
-                console.log("✅ Firebase initialized successfully!");
-                
-                // Hide loading and check auth state
-                setTimeout(() => {
-                    const loadingScreen = document.getElementById('loadingScreen');
-                    if (loadingScreen) {
-                        loadingScreen.style.display = 'none';
-                    }
-                    checkAuthState();
-                }, 1000);
-            } catch (error) {
-                console.error("Firebase initialization error:", error);
-                // Hide loading and show login screen
-                setTimeout(() => {
-                    const loadingScreen = document.getElementById('loadingScreen');
-                    if (loadingScreen) {
-                        loadingScreen.style.display = 'none';
-                    }
-                    const loginScreen = document.getElementById('loginScreen');
-                    if (loginScreen) {
-                        loginScreen.style.display = 'flex';
-                    }
-                }, 500);
-                showToast('Running in offline mode', 'info');
-            }
-        }
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
 
-        function checkAuthState() {
-            if (!auth) {
-                const loginScreen = document.getElementById('loginScreen');
-                if (loginScreen) {
-                    loginScreen.style.display = 'flex';
-                }
-                return;
-            }
-
-            auth.onAuthStateChanged((user) => {
-                if (user) {
-                    console.log("✅ User logged in:", user.email);
-                    document.getElementById('loginScreen').style.display = 'none';
-                    document.getElementById('registerScreen').style.display = 'none';
-                    document.getElementById('mainApp').style.display = 'flex';
-                    document.getElementById('userName').textContent = user.displayName || user.email;
-                    
-                    // Load user data after showing dashboard
-                    if (window.loadUserData) {
-                        window.loadUserData();
-                    }
-                } else {
-                    console.log("No user logged in");
-                    document.getElementById('loginScreen').style.display = 'flex';
-                    document.getElementById('mainApp').style.display = 'none';
-                }
-            });
-        }
-
-        function showToast(message, type) {
-            const toast = document.getElementById('toast');
-            if (!toast) return;
-            toast.textContent = message;
-            toast.className = `toast ${type} show`;
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
-
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log("📱 Page loaded, initializing Firebase...");
-            initializeFirebase();
-        });
+        console.log("Firebase initialized successfully");
     </script>
 
-    <!-- Main App Logic -->
-    <script src="app.js"></script>
+    <!-- Chart.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
+    <!-- jsPDF Library for PDF Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- App Script -->
+    <script src="app.js"></script>
 </body>
 </html>
