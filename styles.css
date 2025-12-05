@@ -462,6 +462,7 @@ body {
     display: none; /* Hide the chip completely */
 }
 
+
 .card-wave {
     position: absolute;
     width: 220px;
@@ -1162,5 +1163,4 @@ body {
     font-size: 16px;
     font-weight: 600;
 }
-
 
