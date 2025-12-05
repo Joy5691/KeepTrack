@@ -975,7 +975,9 @@ function populateFilterCategories() {
 }
 
 // Auth state – show username and currency
-if (typeof auth !== 'undefined' && auth) {
+if (typeof firebase !== 'undefined' && firebase.auth) {
+    const auth = firebase.auth();
+    
     auth.onAuthStateChanged((user) => {
         currentUser = user || null;
 
@@ -1009,6 +1011,12 @@ if (typeof auth !== 'undefined' && auth) {
             if (loginScreen) loginScreen.style.display = 'flex';
         }
     });
+} else {
+    // Firebase not loaded - show login screen immediately
+    console.log("Firebase not available - showing login screen");
+    if (loadingScreen) loadingScreen.style.display = 'none';
+    if (loginScreen) loginScreen.style.display = 'flex';
+    if (mainApp) mainApp.style.display = 'none';
 }
 
 // Load data when user logs in
