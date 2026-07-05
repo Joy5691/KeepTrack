@@ -390,7 +390,7 @@ copies or substantial portions of the Software.
 
 <div align="center">
 
-<img src="./assets/logo.svg" width="70" alt="KeepTrack compass mark"/>
+<img src="public/logo.svg" width="70" alt="KeepTrack compass mark"/>
 
 **Khalid Mahmud Joy**
 
