@@ -81,13 +81,6 @@ The result is an app that behaves less like a ledger and more like a **compass**
 <sub>Compass emblem · Google SSO</sub>
 </td>
 <td width="25%" align="center">
-<img src="./screenshots/LoadingScrren.png" alt="Loading Screen" width="100%"/>
-<br/>
-<b>🧭 Loading</b>
-<br/>
-<sub>Syncing financial compass…</sub>
-</td>
-<td width="25%" align="center">
 <img src="./screenshots/Dashboard.png" alt="Dashboard" width="100%"/>
 <br/>
 <b>🏠 Dashboard</b>
