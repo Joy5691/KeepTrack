@@ -1,45 +1,53 @@
 <div align="center">
 
-<img src="https://img.shields.io/badge/-KeepTrack-0A0A0A?style=for-the-badge&labelColor=0A0A0A" height="0" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F46E5,100:F59E0B&height=180&section=header&text=KeepTrack&fontSize=60&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Navigate%20your%20finances%20with%20clarity&descAlignY=58&descSize=18" width="100%" alt="KeepTrack banner" />
 
-# 🧭 KeepTrack
+<img src="./assets/logo.svg" width="130" alt="KeepTrack animated compass logo" />
 
-### *Navigate your finances with clarity.*
+### 🧭 A premium financial compass for your money
 
-A premium, real-time financial management dashboard — built for people who want to **see** their money, not just track it.
-
-<br />
-
-[![Live App](https://img.shields.io/badge/🚀_Live_App-keeptrack2.netlify.app-1E90FF?style=for-the-badge&labelColor=0A0A0A)](https://keeptrack2.netlify.app/)
+<a href="https://readme-typing-svg.demolab.com/">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=6366F1&center=true&vCenter=true&width=560&lines=Track+every+dollar.+Trust+every+number.;Real-time+sync.+Real-time+clarity.;Budgets+that+glow+red+before+you+overspend." alt="Typing SVG" />
+</a>
 
 <br />
 
-![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react&logoColor=white&labelColor=0A0A0A)
-![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=flat-square&logo=typescript&logoColor=white&labelColor=0A0A0A)
-![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite&logoColor=white&labelColor=0A0A0A)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white&labelColor=0A0A0A)
-![Firebase](https://img.shields.io/badge/Firebase-Auth_%7C_Firestore-FFCA28?style=flat-square&logo=firebase&logoColor=white&labelColor=0A0A0A)
-![Motion](https://img.shields.io/badge/Motion-Framer-EF476F?style=flat-square&logo=framer&logoColor=white&labelColor=0A0A0A)
-![Recharts](https://img.shields.io/badge/Recharts-D3-8884d8?style=flat-square&labelColor=0A0A0A)
-![License](https://img.shields.io/badge/License-MIT-90EE90?style=flat-square&labelColor=0A0A0A)
+[![Live App](https://img.shields.io/badge/🚀_LIVE_DEMO-keeptrack2.netlify.app-4F46E5?style=for-the-badge&labelColor=0B1120)](https://keeptrack2.netlify.app/)
+
+<br />
+
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white&labelColor=0B1120)
+![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?style=for-the-badge&logo=typescript&logoColor=white&labelColor=0B1120)
+![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=for-the-badge&logo=vite&logoColor=white&labelColor=0B1120)
+![TailwindCSS](https://img.shields.io/badge/Tailwind-CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white&labelColor=0B1120)
+![Firebase](https://img.shields.io/badge/Firebase-Auth_%7C_Firestore-FFCA28?style=for-the-badge&logo=firebase&logoColor=white&labelColor=0B1120)
+![Motion](https://img.shields.io/badge/Motion-Framer-EF476F?style=for-the-badge&logo=framer&logoColor=white&labelColor=0B1120)
+
+<br />
+
+![Stars](https://img.shields.io/github/stars/Joy5691/KeepTrack?style=social)
+![Forks](https://img.shields.io/github/forks/Joy5691/KeepTrack?style=social)
+![License](https://img.shields.io/github/license/Joy5691/KeepTrack?style=flat-square&color=90EE90&labelColor=0B1120)
 
 </div>
 
 <br />
 
----
-
 ## 📖 Table of Contents
 
 - [Introduction](#-introduction--theme-philosophy)
+- [Screenshots](#-screenshots)
 - [Key Features](#-key-features)
 - [Tech Stack & Architecture](#-tech-stack--architecture)
 - [Installation & Quick Start](#-installation--quick-start)
 - [Firestore Security Rules](#-firestore-security-rules)
 - [Contributing](#-contributing)
 - [License](#-license)
+- [Author](#-author)
 
----
+<br />
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0B1120,100:0B1120&height=3&section=header" width="100%" />
 
 ## 🧭 Introduction & Theme Philosophy
 
@@ -49,15 +57,86 @@ The entire product is designed under the **"Financial Compass"** visual language
 
 | Principle | Application in KeepTrack |
 |---|---|
-| **Swiss Typographic Rigor** | Strict type scales, generous whitespace, and high-contrast numerals so balances and figures are legible at a glance — no squinting at your net worth. |
-| **Instrument-Grade Visual Feedback** | Every core metric — balance, spending pace, budget health — is represented by a *living* visual (waves, pulses, radars) rather than a static number, so trends are felt before they're read. |
-| **Lightweight, Purposeful Motion** | Powered by `motion`, animations are spring-based and physically believable — subtle enough to never distract, present enough to make the interface feel alive. |
+| 🅰️ **Swiss Typographic Rigor** | Strict type scales, generous whitespace, and high-contrast numerals so balances and figures are legible at a glance — no squinting at your net worth. |
+| 📡 **Instrument-Grade Visual Feedback** | Every core metric — balance, spending pace, budget health — is represented by a *living* visual (waves, pulses, radars) rather than a static number, so trends are felt before they're read. |
+| 🌊 **Lightweight, Purposeful Motion** | Powered by `motion`, animations are spring-based and physically believable — subtle enough to never distract, present enough to make the interface feel alive. |
 
 The result is an app that behaves less like a ledger and more like a **compass** — always orienting you toward where your money is actually going.
 
 > 🔗 **Experience it live:** [**keeptrack2.netlify.app**](https://keeptrack2.netlify.app/)
 
----
+<br />
+
+## 📸 Screenshots
+
+<div align="center">
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="./screenshots/Loginpage.png" alt="Login Page" width="100%"/>
+<br/>
+<b>🔐 Login Page</b>
+<br/>
+<sub>Animated compass emblem · Email &amp; Google SSO</sub>
+</td>
+<td width="50%" align="center">
+<img src="./screenshots/LoadingScrren.png" alt="Loading Screen" width="100%"/>
+<br/>
+<b>🧭 Loading Screen</b>
+<br/>
+<sub>"Syncing financial compass…"</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<img src="./screenshots/Dashboard.png" alt="KeepTrack Dashboard" width="92%"/>
+<br/>
+<b>🏠 Dashboard</b> — Balance Waves · Spending Pulse · Daily Average · Monthly Budget
+<br/><br/>
+
+<table>
+<tr>
+<td width="50%" align="center">
+<img src="./screenshots/QuickAddExpenseFeature.png" alt="Quick Add Expense" width="100%"/>
+<br/>
+<b>⚡ Quick Add Expense</b>
+<br/>
+<sub>Log a transaction in seconds, synced instantly</sub>
+</td>
+<td width="50%" align="center">
+<img src="./screenshots/AnalyticsSection.png" alt="Analytics Section" width="100%"/>
+<br/>
+<b>📊 Analytics</b>
+<br/>
+<sub>Category breakdowns powered by Recharts &amp; D3</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center">
+<img src="./screenshots/TransactionHistorySection.png" alt="Transaction History" width="100%"/>
+<br/>
+<b>📜 Transaction History</b>
+<br/>
+<sub>Filterable, real-time transaction ledger</sub>
+</td>
+<td width="50%" align="center">
+<img src="./screenshots/Calenderwisetransaction.png" alt="Calendar-wise Transactions" width="100%"/>
+<br/>
+<b>📅 Calendar View</b>
+<br/>
+<sub>Transactions mapped day-by-day across the month</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+> 💡 Place the corresponding image files inside a `screenshots/` folder at the project root, matching the filenames referenced above.
+
+<br />
 
 ## ✨ Key Features
 
@@ -92,7 +171,7 @@ A first-class theme context drives the entire app's palette — both modes are t
 ### ⏳ Signature Loading Experience
 A custom loading screen featuring multiple concentric rotating rings around a central compass pointer, labeled **"Syncing financial compass…"** — turning even the wait state into part of the brand experience.
 
----
+<br />
 
 ## 🏗 Tech Stack & Architecture
 
@@ -137,17 +216,20 @@ A custom loading screen featuring multiple concentric rotating rings around a ce
 
 ```
 keeptrack/
+├── assets/
+│   └── logo.svg              # Animated compass logo
+├── screenshots/               # README screenshots
 ├── src/
-│   ├── assets/              # Compass logo SVGs, static illustrations
+│   ├── assets/                # Compass logo SVGs, static illustrations
 │   ├── components/
-│   │   ├── dashboard/       # Balance, Pulse, Average, Budget cards
-│   │   ├── charts/          # Recharts/D3 chart wrappers
-│   │   ├── auth/            # Login/Signup UI
-│   │   └── ui/              # Shared primitives (buttons, modals, inputs)
-│   ├── context/             # ThemeContext, AuthContext
-│   ├── hooks/               # useTransactions, useBudgets, useFirestore
-│   ├── lib/                 # firebase.ts (SDK init), utils
-│   ├── types/                # TypeScript models (Transaction, Budget, User)
+│   │   ├── dashboard/         # Balance, Pulse, Average, Budget cards
+│   │   ├── charts/            # Recharts/D3 chart wrappers
+│   │   ├── auth/              # Login/Signup UI
+│   │   └── ui/                # Shared primitives (buttons, modals, inputs)
+│   ├── context/                # ThemeContext, AuthContext
+│   ├── hooks/                  # useTransactions, useBudgets, useFirestore
+│   ├── lib/                    # firebase.ts (SDK init), utils
+│   ├── types/                  # TypeScript models (Transaction, Budget, User)
 │   ├── App.tsx
 │   └── main.tsx
 ├── .env.example
@@ -157,7 +239,7 @@ keeptrack/
 └── package.json
 ```
 
----
+<br />
 
 ## 🚀 Installation & Quick Start
 
@@ -170,8 +252,8 @@ keeptrack/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/keeptrack.git
-cd keeptrack
+git clone https://github.com/Joy5691/KeepTrack.git
+cd KeepTrack
 ```
 
 ### 2. Install dependencies
@@ -222,7 +304,7 @@ Optimized static assets are output to the `dist/` directory, ready for deploymen
 npm run preview
 ```
 
----
+<br />
 
 ## 🔐 Firestore Security Rules
 
@@ -264,7 +346,7 @@ service cloud.firestore {
 - ✅ **Explicit allow, implicit deny** — the catch-all rule at the bottom denies any path not explicitly matched above.
 - 🧾 **UID-bound ownership** — every read/write checks `request.auth.uid` against the path's `userId`, preventing cross-account data access even if a document ID is guessed.
 
----
+<br />
 
 ## 🤝 Contributing
 
@@ -283,7 +365,7 @@ Contributions are welcome and appreciated. To propose a change:
 
 Please keep PRs focused — one feature or fix per pull request — and ensure `npm run build` completes cleanly before submitting.
 
----
+<br />
 
 ## 📄 License
 
@@ -292,7 +374,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](./LICEN
 ```
 MIT License
 
-Copyright (c) 2026 KeepTrack
+Copyright (c) 2026 Khalid Mahmud Joy
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files, to deal in the Software
@@ -302,12 +384,33 @@ Software, subject to the inclusion of the above copyright notice in all
 copies or substantial portions of the Software.
 ```
 
+<br />
+
+## 👤 Author
+
 <div align="center">
+
+<img src="./assets/logo.svg" width="70" alt="KeepTrack compass mark"/>
+
+**Khalid Mahmud Joy**
+
+Computer Science & Engineering · East West University
+
+Designed, engineered, and navigated into existence by the author below.
+
+[![GitHub](https://img.shields.io/badge/GitHub-Joy5691-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0B1120)](https://github.com/Joy5691)
+[![Live App](https://img.shields.io/badge/Live_App-keeptrack2.netlify.app-4F46E5?style=for-the-badge&labelColor=0B1120)](https://keeptrack2.netlify.app/)
+
+</div>
 
 <br />
 
-**Built with precision. Designed for clarity.**
+<div align="center">
 
-[🧭 Launch KeepTrack](https://keeptrack2.netlify.app/)
+### ⭐ If KeepTrack helped you find your financial north, consider starring the repo!
+
+<a href="#-keeptrack">⬆ Back to top</a>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:F59E0B,100:4F46E5&height=120&section=footer" width="100%" alt="footer wave" />
 
 </div>
