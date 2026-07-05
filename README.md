@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F46E5,100:F59E0B&height=180&section=header&text=KeepTrack&fontSize=60&fontColor=ffffff&fontAlignY=38&animation=fadeIn&desc=Navigate%20your%20finances%20with%20clarity&descAlignY=58&descSize=18" width="100%" alt="KeepTrack banner" />
 
-<img src="./screenshots/logo.svg" width="130" alt="KeepTrack animated compass logo" />
+<img src="public/logo.svg" width="130" alt="KeepTrack animated compass logo" />
 
 ### 🧭 A premium financial compass for your money
 
