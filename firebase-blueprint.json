@@ -1,0 +1,78 @@
+{
+  "entities": {
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Information about an income or expense.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "type": { "type": "string", "enum": ["income", "expense"] },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "number" },
+        "notes": { "type": "string" },
+        "source": { "type": "string" },
+        "createdAt": { "type": "number", "description": "Server timestamp" },
+        "updatedAt": { "type": "number", "description": "Server timestamp" }
+      },
+      "required": ["userId", "type", "amount", "category", "date", "source", "createdAt", "updatedAt"]
+    },
+    "Goal": {
+      "title": "Goal",
+      "description": "A savings goal.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "name", "targetAmount", "currentAmount", "createdAt", "updatedAt"]
+    },
+    "Budget": {
+      "title": "Budget",
+      "description": "Monthly budget for a category.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "category": { "type": "string" },
+        "limit": { "type": "number" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["userId", "category", "limit", "createdAt", "updatedAt"]
+    },
+    "User": {
+        "title": "User",
+        "description": "User profile.",
+        "type": "object",
+        "properties": {
+            "currency": { "type": "string" },
+            "onboardingCompleted": { "type": "boolean" },
+            "createdAt": { "type": "number" },
+            "updatedAt": { "type": "number" }
+        },
+        "required": ["currency", "onboardingCompleted", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "User profile settings"
+    },
+    "users/{userId}/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "User transactions"
+    },
+    "users/{userId}/goals/{goalId}": {
+      "schema": "Goal",
+      "description": "User savings goals"
+    },
+    "users/{userId}/budgets/{budgetId}": {
+      "schema": "Budget",
+      "description": "User budgets"
+    }
+  }
+}

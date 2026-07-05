@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #0088ff;
+  --color-primary-hover: #0077ee;
+  --color-primary-dark: #0050b3;
+  --color-accent: #ffb300;
+  --color-accent-dark: #d97706;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-slate-50 text-slate-900 transition-colors duration-300;
+  }
+  .dark body {
+    @apply bg-[#03030a] text-slate-100;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Galaxy background for dark mode */
+.dark .galaxy-bg {
+  background-color: #020205;
+  background-image: none;
+}
+
+.galaxy-bg {
+  background-color: #f8fafc;
+}
+
+.glass-panel {
+  @apply bg-white/50 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-xl;
+}
+

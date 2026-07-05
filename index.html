@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Defensive workaround for sandboxed environments (like iFrames) where window.fetch is a prototype getter-only property.
+      // This prevents "Uncaught TypeError: Cannot set property fetch of #<Window> which has only a getter" when libraries attempt to override or mock it.
+      try {
+        if (window.fetch) {
+          const originalFetch = window.fetch;
+          let customFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            get() {
+              return customFetch;
+            },
+            set(val) {
+              customFetch = val;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        }
+      } catch (e) {
+        console.warn("Could not patch window.fetch:", e);
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#0088ff">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="apple-touch-icon" href="/logo.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>KeepTrack</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

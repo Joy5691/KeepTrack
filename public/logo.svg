@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Mask to create the uniform circular gap around the central gold circle -->
+    <mask id="pointer-cutout">
+      <rect x="0" y="0" width="512" height="512" fill="white" />
+      <circle cx="256" cy="256" r="88" fill="black" />
+    </mask>
+
+    <!-- Mask to carve the beautiful 4-leaf clover cutout from the gold circle -->
+    <mask id="clover-cutout">
+      <rect x="0" y="0" width="512" height="512" fill="white" />
+      <!-- Lobe cutouts of the 4-leaf clover -->
+      <circle cx="256" cy="234" r="20" fill="black" />
+      <circle cx="256" cy="278" r="20" fill="black" />
+      <circle cx="234" cy="256" r="20" fill="black" />
+      <circle cx="278" cy="256" r="20" fill="black" />
+      <!-- Center cutout connector -->
+      <circle cx="256" cy="256" r="14" fill="black" />
+    </mask>
+  </defs>
+
+  <!-- BACKGROUND: Completely transparent to blend beautifully in any layout -->
+
+  <!-- GROUP 1: Compass Pointers with cutout mask applied -->
+  <g mask="url(#pointer-cutout)">
+    <!-- ==================== MAIN POINTERS (BLUE) ==================== -->
+    <!-- North Pointer -->
+    <!-- Left: Light Blue, Right: Dark Blue -->
+    <path d="M 256,50 L 220,160 L 256,210 Z" fill="#0091ff" />
+    <path d="M 256,50 L 256,210 L 292,160 Z" fill="#0050b3" />
+
+    <!-- East Pointer -->
+    <!-- Top: Light Blue, Bottom: Dark Blue -->
+    <path d="M 462,256 L 352,220 L 302,256 Z" fill="#0091ff" />
+    <path d="M 462,256 L 302,256 L 352,292 Z" fill="#0050b3" />
+
+    <!-- South Pointer -->
+    <!-- Left: Dark Blue, Right: Light Blue -->
+    <path d="M 256,462 L 220,352 L 256,302 Z" fill="#0050b3" />
+    <path d="M 256,462 L 256,302 L 292,352 Z" fill="#0091ff" />
+
+    <!-- West Pointer -->
+    <!-- Top: Dark Blue, Bottom: Light Blue -->
+    <path d="M 50,256 L 160,220 L 210,256 Z" fill="#0050b3" />
+    <path d="M 50,256 L 210,256 L 160,292 Z" fill="#0091ff" />
+
+    <!-- ==================== DIAGONAL POINTERS (GOLD) ==================== -->
+    <!-- North-East Pointer -->
+    <!-- Left: Light Gold, Right: Dark Gold -->
+    <path d="M 376,136 L 306,146 L 296,216 Z" fill="#ffb300" />
+    <path d="M 376,136 L 296,216 L 366,206 Z" fill="#d97706" />
+
+    <!-- South-East Pointer -->
+    <!-- Top: Light Gold, Bottom: Dark Gold -->
+    <path d="M 376,376 L 366,306 L 296,296 Z" fill="#ffb300" />
+    <path d="M 376,376 L 296,296 L 306,366 Z" fill="#d97706" />
+
+    <!-- South-West Pointer -->
+    <!-- Top: Dark Gold, Bottom: Light Gold -->
+    <path d="M 136,376 L 146,306 L 216,296 Z" fill="#d97706" />
+    <path d="M 136,376 L 216,296 L 206,366 Z" fill="#ffb300" />
+
+    <!-- North-West Pointer -->
+    <!-- Top: Light Gold, Bottom: Dark Gold -->
+    <path d="M 136,136 L 206,146 L 216,216 Z" fill="#ffb300" />
+    <path d="M 136,136 L 216,216 L 146,206 Z" fill="#d97706" />
+  </g>
+
+  <!-- GROUP 2: Central Gold Circle with Clover Mask applied -->
+  <g mask="url(#clover-cutout)">
+    <!-- Left semicircle: Dark Gold -->
+    <path d="M 256,180 A 76,76 0 0,0 256,332 Z" fill="#d97706" />
+    <!-- Right semicircle: Light Gold -->
+    <path d="M 256,180 A 76,76 0 0,1 256,332 Z" fill="#ffb300" />
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+{
+  "name": "KeepTrack",
+  "description": "A premium AI-powered personal finance and expense tracker web app with modern fintech aesthetics, advanced analytics, and emotional user interaction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

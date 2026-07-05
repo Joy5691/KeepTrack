@@ -1,0 +1,118 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    match /users/{userId} {
+      function isValidUser(data) {
+        return data.keys().hasAll(['currency', 'onboardingCompleted', 'createdAt', 'updatedAt']) 
+            && data.keys().size() == 4
+            && data.currency is string && data.currency.size() <= 10
+            && data.onboardingCompleted is bool;
+      }
+      
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId)
+                    && isValidId(userId)
+                    && isValidUser(request.resource.data)
+                    && request.resource.data.createdAt == request.time
+                    && request.resource.data.updatedAt == request.time;
+      allow update: if isOwner(userId)
+                    && isValidId(userId)
+                    && request.resource.data.keys().hasAll(['currency', 'onboardingCompleted', 'createdAt', 'updatedAt'])
+                    && request.resource.data.currency is string
+                    && request.resource.data.onboardingCompleted is bool
+                    && request.resource.data.createdAt == resource.data.createdAt
+                    && request.resource.data.updatedAt == request.time;
+      allow delete: if false;
+
+      match /transactions/{transactionId} {
+        function isValidTransaction(data) {
+            return data.keys().hasAll(['userId', 'type', 'amount', 'category', 'date', 'source', 'notes', 'createdAt', 'updatedAt']) 
+                && data.keys().size() <= 9
+                && data.userId == userId
+                && data.type in ['income', 'expense']
+                && data.amount is number
+                && data.category is string && data.category.size() <= 100
+                && data.date is number
+                && data.source is string && data.source.size() <= 100
+                && (data.notes == null || data.notes == '' || (data.notes is string && data.notes.size() <= 1000));
+        }
+
+        allow read, list: if isOwner(userId) && resource.data.userId == request.auth.uid;
+        allow create: if isOwner(userId) 
+                      && isValidId(transactionId)
+                      && isValidTransaction(request.resource.data)
+                      && request.resource.data.createdAt == request.time
+                      && request.resource.data.updatedAt == request.time;
+        allow update: if isOwner(userId)
+                      && isValidId(transactionId)
+                      && isValidTransaction(request.resource.data)
+                      && request.resource.data.createdAt == resource.data.createdAt
+                      && request.resource.data.updatedAt == request.time;
+        allow delete: if isOwner(userId) && isValidId(transactionId);
+      }
+      
+      match /goals/{goalId} {
+        function isValidGoal(data) {
+            return data.keys().hasAll(['userId', 'name', 'targetAmount', 'currentAmount', 'createdAt', 'updatedAt'])
+                && data.keys().size() == 6
+                && data.userId == userId
+                && data.name is string && data.name.size() <= 100
+                && data.targetAmount is number
+                && data.currentAmount is number;
+        }
+
+        allow read, list: if isOwner(userId) && resource.data.userId == request.auth.uid;
+        allow create: if isOwner(userId)
+                      && isValidId(goalId)
+                      && isValidGoal(request.resource.data)
+                      && request.resource.data.createdAt == request.time
+                      && request.resource.data.updatedAt == request.time;
+        allow update: if isOwner(userId)
+                      && isValidId(goalId)
+                      && isValidGoal(request.resource.data)
+                      && request.resource.data.createdAt == resource.data.createdAt
+                      && request.resource.data.updatedAt == request.time;
+        allow delete: if isOwner(userId) && isValidId(goalId);
+      }
+      
+      match /budgets/{budgetId} {
+        function isValidBudget(data) {
+            return data.keys().hasAll(['userId', 'category', 'limit', 'createdAt', 'updatedAt'])
+                && data.keys().size() == 5
+                && data.userId == userId
+                && data.category is string && data.category.size() <= 100
+                && data.limit is number;
+        }
+
+        allow read, list: if isOwner(userId) && resource.data.userId == request.auth.uid;
+        allow create: if isOwner(userId)
+                      && isValidId(budgetId)
+                      && isValidBudget(request.resource.data)
+                      && request.resource.data.createdAt == request.time
+                      && request.resource.data.updatedAt == request.time;
+        allow update: if isOwner(userId)
+                      && isValidId(budgetId)
+                      && isValidBudget(request.resource.data)
+                      && request.resource.data.createdAt == resource.data.createdAt
+                      && request.resource.data.updatedAt == request.time;
+        allow delete: if isOwner(userId) && isValidId(budgetId);
+      }
+    }
+  }
+}
