@@ -73,61 +73,56 @@ The result is an app that behaves less like a ledger and more like a **compass**
 
 <table>
 <tr>
-<td width="50%" align="center">
+<td width="25%" align="center">
 <img src="./screenshots/Loginpage.png" alt="Login Page" width="100%"/>
 <br/>
-<b>🔐 Login Page</b>
+<b>🔐 Login</b>
 <br/>
-<sub>Animated compass emblem · Email &amp; Google SSO</sub>
+<sub>Compass emblem · Google SSO</sub>
 </td>
-<td width="50%" align="center">
+<td width="25%" align="center">
 <img src="./screenshots/LoadingScrren.png" alt="Loading Screen" width="100%"/>
 <br/>
-<b>🧭 Loading Screen</b>
+<b>🧭 Loading</b>
 <br/>
-<sub>"Syncing financial compass…"</sub>
+<sub>Syncing financial compass…</sub>
 </td>
-</tr>
-</table>
-
+<td width="25%" align="center">
+<img src="./screenshots/Dashboard.png" alt="Dashboard" width="100%"/>
 <br/>
-
-<img src="./screenshots/Dashboard.png" alt="KeepTrack Dashboard" width="92%"/>
+<b>🏠 Dashboard</b>
 <br/>
-<b>🏠 Dashboard</b> — Balance Waves · Spending Pulse · Daily Average · Monthly Budget
-<br/><br/>
-
-<table>
-<tr>
-<td width="50%" align="center">
+<sub>Balance · Pulse · Budget cards</sub>
+</td>
+<td width="25%" align="center">
 <img src="./screenshots/QuickAddExpenseFeature.png" alt="Quick Add Expense" width="100%"/>
 <br/>
-<b>⚡ Quick Add Expense</b>
+<b>⚡ Quick Add</b>
 <br/>
-<sub>Log a transaction in seconds, synced instantly</sub>
+<sub>Log an expense in seconds</sub>
 </td>
-<td width="50%" align="center">
+</tr>
+<tr>
+<td width="33.33%" align="center">
 <img src="./screenshots/AnalyticsSection.png" alt="Analytics Section" width="100%"/>
 <br/>
 <b>📊 Analytics</b>
 <br/>
-<sub>Category breakdowns powered by Recharts &amp; D3</sub>
+<sub>Recharts &amp; D3 breakdowns</sub>
 </td>
-</tr>
-<tr>
-<td width="50%" align="center">
+<td width="33.33%" align="center">
 <img src="./screenshots/TransactionHistorySection.png" alt="Transaction History" width="100%"/>
 <br/>
 <b>📜 Transaction History</b>
 <br/>
-<sub>Filterable, real-time transaction ledger</sub>
+<sub>Filterable, real-time ledger</sub>
 </td>
-<td width="50%" align="center">
+<td width="33.33%" align="center">
 <img src="./screenshots/Calenderwisetransaction.png" alt="Calendar-wise Transactions" width="100%"/>
 <br/>
 <b>📅 Calendar View</b>
 <br/>
-<sub>Transactions mapped day-by-day across the month</sub>
+<sub>Day-by-day transaction map</sub>
 </td>
 </tr>
 </table>
