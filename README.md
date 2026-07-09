@@ -7,7 +7,7 @@
 ### 🧭 A premium financial compass for your money
 
 <a href="https://readme-typing-svg.demolab.com/">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=6366F1&center=true&vCenter=true&width=560&lines=Track+every+dollar.+Trust+every+number.;Real-time+sync.+Real-time+clarity.;Budgets+that+glow+red+before+you+overspend." alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&duration=2800&pause=900&color=6366F1&center=true&vCenter=true&width=560&lines=Track+every+taka.+Trust+every+number.;Real-time+sync.+Real-time+clarity.;Budgets+that+glow+red+before+you+overspend." alt="Typing SVG" />
 </a>
 
 <br />
